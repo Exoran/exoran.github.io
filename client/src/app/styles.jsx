@@ -21,7 +21,7 @@ export const Nav = styled.div `
 `
 
 export const Navbar = styled.ul`
-  background-color:#CFD8DC;
+  background-color:#37474F;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -30,12 +30,11 @@ export const Navbar = styled.ul`
 
 export const MenuItem = styled.li`
   float: left;
-  color:black;
 
 
   >a{
     display: block;
-    color: black
+    color: white
     text-align: center;
     padding: 10px 12px;
     text-decoration: none;
@@ -72,8 +71,8 @@ export const Baseline = styled.h1`
 
 export const About = styled.div `
   padding:8px;
-  box-sizing: border-box
-  display:flex;
+  box-sizing: border-box;
+  display:block;
   width: 66%;
   margin-left: 17%;
   margin-top: 0%;
@@ -142,7 +141,6 @@ export const AchievementLink = styled(Link)`
   margin-bottom: 16px;
   background: white;
   border-radius: 2px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   overflow: hidden;
   & h1 {
     position: absolute;
@@ -162,6 +160,16 @@ export const AchievementLink = styled(Link)`
   & h1::after {
     display: none;
   }
+  &:before {
+  content: '';
+  position: absolute;
+  top: -1;
+  right: -1;
+  border-top: 35px solid #546E7A;
+  border-left: 35px solid transparent;
+  width: 0;
+  z-index: 1;
+}
 `
 
 export const AchievementHidden = styled.div `
@@ -178,6 +186,21 @@ export const Preview = styled.embed`
   border: none;
   position: relative;
   margin-top: 34px;
+`
+
+export const Ribbon = styled.div`
+  width: 200px;
+  background: #006064;
+  position: absolute;
+  top: auto;
+  bottom: 25px;
+  left: -50px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
 `
 export const NoClick = styled.div`
   display: block;

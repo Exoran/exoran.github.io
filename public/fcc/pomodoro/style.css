@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+body{
+  font-family:Open Sans;
+  color:#E8EAF6;
+  background-color:#0D47A1;
+  transition: all 0.35s;
+}
+
+header{
+  font-family:Baloo Bhaina;
+  padding-top:10%;
+  padding-bottom:5%;
+  text-align:center;
+}
+h1{
+
+}
+h3{
+  padding-top:10px;
+  text-align:center;
+  display:inline-block;
+}
+.operator{
+  height:30px;
+  width:30px;
+  background-color:#E8EAF6;
+  border-radius:15px;
+  border-color:#7986CB;
+  margin:0;
+  display:inline-block;
+}
+
+.operator2{
+  height:30px;
+  width:30px;
+  background-color:#E8EAF6;
+  border-radius:15px;
+  border-color:#7986CB;
+  margin:0;
+  display:inline-block;
+}
+.settings{
+  font-family:inconsolata;
+  text-align:center;
+}
+.hidden{
+  display : invisible;
+}
+.timer{
+  cursor:pointer;
+  margin:0 auto;
+  margin-top:50px;
+  position:relative;
+  height:300px;
+  width:300px;
+  border-radius:50%;
+  border:10px solid;
+  border-color:#E8EAF6;
+  padding-top:120px;
+  text-align:center;
+  font-family:Inconsolata;
+}
+
+.buttons{
+  padding:20px;
+  text-align:center;
+}
+.reset {
+  position:relative;
+  height:30px;
+  width:auto;
+  background-color:#E8EAF6;
+  border-radius: 5px;
+  border-color:#7986CB;
+  margin:3px;
+  display:inline-block;
+}

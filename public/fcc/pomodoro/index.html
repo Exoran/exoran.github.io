@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- META -->
+    <link rel="icon" href="http://alexandrerobin.fr/media/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="pomodoro.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <h1 class="title"> POMODORO CLOCK</h1>
+  </header>
+
+  <div class=container>
+    <div class="row">
+      <div class="col-md-6">
+    <div class="settings">
+      <h2>Session Length</h2>
+      <button class="operator" value="-">-</button>
+      <h3 id="sessionLength" class="">25</h3>
+      <button class="operator" value="+">+</button>
+    </div>
+      </div>
+      <div class="col-md-6">
+      <div class="settings">
+        <h2>Break Length</h2>
+      <button class="operator2" value="-">-</button>
+      <h3 id="breakLength" class="">05</h3>
+      <button class="operator2" value="+">+</button>
+    </div>
+      </div>
+      </div>
+
+    <div class="timer">
+      <h1 class="clock">25 : 00</h1>
+    </div>
+
+    <div class="buttons">
+      <button class="reset invisible">RESET</button>
+    </div>
+  </div>
+</body>
+
+
+</html>

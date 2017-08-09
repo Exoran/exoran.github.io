@@ -1,0 +1,54 @@
+body{
+  background-color:#0097A7;
+  padding-top:10%;
+}
+.container{
+  background-color:white;
+  color:#0097A7;
+  text-align:justify;
+  margin:auto;
+  padding:50px;
+  width:50%;
+  min-width: 310px;
+  display:block;
+  border:none;
+  border-radius:5px;
+}
+.quoteAuthor{
+  text-align:right;
+  font-style:italic;
+}
+.twitter-share-button{
+  float:right;
+  color:#fff;
+}
+a {
+  color:#fff;
+}
+a:hover {
+  opacity:0.8;
+  color:white;
+}
+.button {
+      height:38px;
+      border:none;
+      border-radius:3px;
+      color:#fff;
+      background-color:#0097A7;
+      outline:none;
+      font-size:0.85em;
+      padding: 8px 18px 6px 18px;
+      margin-top:30px;
+      opacity:1;
+      cursor:pointer;
+}
+.button:hover{
+  opacity:0.8;
+}
+.footer{
+  text-align:center;
+  font-size:0.8em;
+  margin-top:10px;
+  padding-bottom:10%;
+  color:#006064;
+}

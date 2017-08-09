@@ -1,0 +1,133 @@
+body {
+  background-color: #1B5E20;
+}
+
+.title {
+  text-align: left;
+  padding: 50px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.container {
+  background-color: #1B5E20;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 700px;
+  position:relative;
+}
+
+.row {
+  margin: 2px 0;
+  padding: 5px;
+  line-height: 50px;
+}
+
+.logo {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+  border: 3px solid #4CAF50;
+}
+
+#name,
+#streaming {
+  line-height: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+#streaming {
+  font-style: italic;
+}
+
+.offline {
+  background-color: #E8F5E9;
+}
+
+.online {
+  background-color: white;
+}
+
+.channel {
+  border: 2px solid #E8F5E9;
+  border-radius: 10px;
+}
+
+
+/* selector from FCC codepen : https://codepen.io/freeCodeCamp/pen/Myvqmo */
+
+.menu {
+  position: absolute;
+  right: 0px;
+  bottom: 5px;
+  color: black;
+  font-size: 0.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.circle-online {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: green;
+  border: 1px solid green;
+  float: left;
+  margin: 5px 5px 5px 0px;
+}
+
+.circle-offline {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: red;
+  border: 1px solid red;
+  float: left;
+  margin: 5px 5px 5px 0px;
+  ;
+}
+
+.active,
+.selector:hover {
+  width: 65px !important;
+  transition: $grow;
+  cursor: pointer;
+}
+
+.selector {
+  line-height: 20px;
+  height: 20px;
+  background-color: white;
+  padding: 0px 5px;
+  margin: 2px 0px;
+  width: 20px;
+  overflow: hidden;
+  float: right;
+  clear: right;
+}
+
+.circle-all {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: black;
+  border: 1px solid black;
+  float: left;
+  margin: 5px 5px 5px 0px;
+}
+
+p {
+  float: right;
+  margin: 0px;
+}
+
+#footer {
+  padding-top: 50px;
+  text-align:center;
+}
+.hidden{
+  display:none;
+}

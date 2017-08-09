@@ -1,22 +1,17 @@
 import {render} from 'react-dom';
 import React, {Component} from 'react';
+import ScrollableAnchor from 'react-scrollable-anchor'
+import { configureAnchors } from 'react-scrollable-anchor'
 import {Container,
-        Nav,
-        Navbar,
-        MenuItem,
-        Header,
+        Nav, Navbar, MenuItem,
+        Header,Baseline,
         About,
-        Portfolio,
-        Preview,
-        Link,
-        Title,
-        AchievementLink,
-        AchievementHidden,
-        NoClick,
+        Portfolio, Preview, Link, Title, AchievementLink, AchievementHidden, NoClick,
         Footer,
-        Baseline,
         SectionTitle,
-        Social} from "./styles"
+        Social,
+        Ribbon,
+      } from "./styles"
 import {injectGlobal} from 'styled-components'
 import {Background} from './particlesconf'
 var FontAwesome = require('react-fontawesome')
@@ -33,32 +28,38 @@ injectGlobal `
     background-color:#006064;
   }
 `
+const WIP = "media/wip.gif"
 
 const projects=[
   {
     title:"Calculator",
-    type:"FCC",
+    type:"JS + JQuery",
     href:"fcc/calculator/"
   },
   {
+    title:"Random Quote",
+    type:"JS + JQuery",
+    href:"fcc/randomquote"
+  },
+  {
     title:"Pomodoro",
-    type:"FCC",
-    href:"media/wip.gif"
+    type:"JS + JQuery",
+    href:"fcc/pomodoro/"
   },
   {
     title:"Weather",
-    type:"FCC",
-    href:"media/wip.gif"
+    type:"JS + JQuery",
+    href:"fcc/weather"
   },
   {
     title:"Twitch",
-    type:"FCC",
-    href:"media/wip.gif"
+    type:"JS + JQuery",
+    href:"fcc/twitch"
   },
   {
     title:"Tictactoe",
-    type:"FCC",
-    href:"media/wip.gif"
+    type:"JS + JQuery",
+    href:"fcc/tictactoe/"
   },
 ]
 
@@ -93,9 +94,12 @@ class Project extends React.Component {
     href.push('')
     href = href.join('/')
     return (
+
       <AchievementLink href={href + this.props.href}>
         <Title>{this.props.title}</Title>
+
         <Preview scrolling="no" src={href + this.props.href} />
+        <Ribbon>{this.props.type}</Ribbon>
         <NoClick />
       </AchievementLink>
     )
@@ -137,15 +141,17 @@ class Content extends Component{
          });}
        }
 
+    componentWillMount(){
+      configureAnchors({offset: -100, scrollDuration: 400})
+    }
 
-
-    /*componentDidMount() {
+    componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
-    }*/
+    }
 
 
   render(){
@@ -155,30 +161,47 @@ class Content extends Component{
 
       <Container>
       <Background />
+      <ScrollableAnchor id='about'>
+        <div></div>
+      </ScrollableAnchor>
       <Header>
             <Baseline>Alexandre Robin</Baseline>
             <p>HR Consultant - Learning how to code</p>
             <p><FontAwesome name="map-marker"  style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/> Paris, France</p>
       </Header>
 
-        {/*<Nav navbarTop={this.state.navbarTop}>
+
+        <Nav navbarTop={this.state.navbarTop}>
           <Navbar  ref="navbar" id="navbar">
-            <MenuItem color={"#f44336"}><a href="#">About Me</a></MenuItem>
-            <MenuItem color={"#03A9F4"}><a href="#">Portfolio</a></MenuItem>
-            <MenuItem color={"#8BC34A"}><a href="#">Contact</a></MenuItem>
+            <MenuItem color={"#006064"}><a href="#about">About</a></MenuItem>
+            <MenuItem color={"#00838F"}><a href="#portfolio">Portfolio</a></MenuItem>
+            <MenuItem color={"#0097A7"}><a href="#contact">Contact</a></MenuItem>
           </Navbar>
         </Nav>
 
-        <About></About>*/}
 
-        <SectionTitle>My Projects</SectionTitle>
+        <About>
+
+          <p>
+            Welcome on my personal website & portfolio !</p>
+            <p>I am following the Freecodecamp courses and trying to complete all their challenges.
+              I will publish all my projects on this portfolio and the sources will be available on my <a href="https://github.com/exoran/exoran.github.io/" target="_blank">Github</a>
+          </p>
+            <p>This portfolio is entirely created in ReactJS.
+          </p>
+        </About>
+
+
+        <ScrollableAnchor id='portfolio'>
+          <SectionTitle>My Projects</SectionTitle>
+        </ScrollableAnchor>
         <Portfolio>
           {
             projects.map(function(a) {
-              if (a.href != "https://media.giphy.com/media/3oxRm9NLuGHvWCZcdO/giphy.gif" || ""){
+              if (a.href != WIP || ""){
               return (
                 <Project title={a.title}
-                  href={a.href} />
+                  href={a.href} type={a.type}/>
               )
             } else {
               return (
@@ -190,7 +213,7 @@ class Content extends Component{
           }
         <AchievementHidden/>
         </Portfolio>
-
+        <ScrollableAnchor id='contact'>
         <Footer>
           {
             socialNetworks.map(function(a) {
@@ -202,6 +225,7 @@ class Content extends Component{
             })
           }
         </Footer>
+      </ScrollableAnchor>
       </Container>
     )
   }

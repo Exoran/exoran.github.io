@@ -1,0 +1,56 @@
+
+
+.body {
+  background-color: #607D8B;
+}
+.main{
+  margin-top : 60px;
+  text-align : center;
+}
+.city{
+  color:#ECEFF1;
+}
+.farorcels {
+  color:#ECEFF1;
+  display :inline;
+}
+.farorcels:hover{
+  color : #263238;
+}
+.temp {
+  color:#ECEFF1;
+  display : inline;
+}
+#weather{
+  margin-top : 30px;
+  display:inline-block;
+  width: 50px;
+  height:50px;
+  text-align:center;
+}
+
+.footer{
+  margin-top:70px;
+
+}
+a {
+  color:#78909C;
+}
+a:hover{
+  color:#263238;
+}
+.rain{
+  background-image:url('http://d30y9cdsu7xlg0.cloudfront.net/png/166100-200.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.thunder{
+  background-image:url('http://d30y9cdsu7xlg0.cloudfront.net/png/27225-200.png');
+  background-size: 100px;
+  background-repeat: no-repeat;
+}
+.snow{
+  background-image:url('http://d30y9cdsu7xlg0.cloudfront.net/png/759725-200.png');
+  background-size: 100px;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <!-- META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- BOOTSTRAP + fontawesome -->
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- css-->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <div class="title">
+        <h1> TIC TAC TOE </h1></div>
+    <div class="turn">NEW GAME</div>
+    <form class="xOrO">
+        <input class="xOrO form1" type="radio" name="XorO" value="X" checked> <span class="X">X</span>
+        <input class="xOrO form1" type="radio" name="XorO" value="O"> <span class="O">O</span></br>
+    </form>
+    <form class="oneOrTwoPlayers">
+        <input class="oneOrTwoPlayers form2" type="radio" name="1or2" value="1" checked> 1 player (v1.0)
+        <input class="oneOrTwoPlayers form2" type="radio" name="1or2" value="2"> 2 players</br>
+    </form>
+
+
+    <div class="board">
+        <div id="1" value="1" class="boxes empty"></div>
+        <div id="2" value="2" class="boxes empty"></div>
+        <div id="3" value="3" class="boxes empty"></div>
+        <div id="4" value="4" class="boxes empty"></div>
+        <div id="5" value="5" class="boxes empty"></div>
+        <div id="6" value="6" class="boxes empty"></div>
+        <div id="7" value="7" class="boxes empty"></div>
+        <div id="8" value="8" class="boxes empty"></div>
+        <div id="9" value="9" class="boxes empty"></div>
+    </div>
+
+    <div class="buttons">
+        <button class="reset invisible">Start New Game</button>
+    </div>
+
+</body>
+<footer>
+    Inspired by FCC, coded by Alexandre Robin
+</footer>
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="https://use.fontawesome.com/581e29323c.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="tictactoe.js"></script>
+
+</html>
