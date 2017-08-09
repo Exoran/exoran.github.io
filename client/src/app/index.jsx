@@ -12,23 +12,29 @@ import {Container,
         Title,
         AchievementLink,
         AchievementHidden,
-        NoClick} from "./styles"
+        NoClick,
+        Footer,
+        Baseline,
+        SectionTitle,
+        Social} from "./styles"
 import {injectGlobal} from 'styled-components'
+import {Background} from './particlesconf'
+var FontAwesome = require('react-fontawesome')
 
 //Global CSS
 injectGlobal `
   html,body{
     height: 100%;
     width: 100%;
-    margin:0
+    margin:0;
   }
   body{
     font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
-    background-color:grey;
+    background-color:#006064;
   }
 `
 
-let projects=[
+const projects=[
   {
     title:"Calculator",
     type:"FCC",
@@ -37,45 +43,55 @@ let projects=[
   {
     title:"Pomodoro",
     type:"FCC",
-    href:""
+    href:"https://media.giphy.com/media/3oxRm9NLuGHvWCZcdO/giphy.gif"
   },
   {
     title:"Weather",
     type:"FCC",
-    href:""
+    href:"https://media.giphy.com/media/3oxRm9NLuGHvWCZcdO/giphy.gif"
   },
   {
-    title:"Are they online ?",
+    title:"Twitch",
     type:"FCC",
-    href:""
+    href:"https://media.giphy.com/media/3oxRm9NLuGHvWCZcdO/giphy.gif"
   },
   {
-    title:"tictactoe",
+    title:"Tictactoe",
     type:"FCC",
-    href:""
+    href:"https://media.giphy.com/media/3oxRm9NLuGHvWCZcdO/giphy.gif"
   },
 ]
 
-let socialNetworks= [
+const socialNetworks= [
   {
     title:"LinkedIN",
     href:"http://linkedin.com/in/robinalexandre",
-    logo:"",
+    icon:"linkedin",
   },
   {
     title:"Twitter",
-    href:"http://twitter.com/alexandrobin",
-    logo:"",
+    href:"http://twitter.com/alexandrobin_",
+    icon:"twitter",
+  },
+  {
+    title:"GitHub",
+    href:"http://github.com/exoran",
+    icon:"github",
+  },
+  {
+    title:"FreeCodeCamp",
+    href:"http://freecodecamp.com/exoran",
+    icon:"free-code-camp",
   },
 ]
 
 class Project extends React.Component {
   render() {
-    let href = window.location.href
+    /*let href = window.location.href
     href = href.split('/')
     href.pop()
     href.push('')
-    href = href.join('/')
+    href = href.join('/')*/
     return (
       <AchievementLink href={this.props.href}>
         <Title>{this.props.title}</Title>
@@ -86,37 +102,87 @@ class Project extends React.Component {
   }
 }
 
+
+
+
+// MAIN APP
 class Content extends Component{
+  constructor(){
+    super()
+    this.state = {
+      navbarTop: false,
+    }
+    this.handleScroll = this.handleScroll.bind(this)
+    this.getOffset = this.getOffset.bind(this)
+  }
+
+  getOffset(element){
+      let bounding = {
+        top: document.getElementById('navbar').offsetTop,
+      };
+      return {
+          top: bounding.top + document.body.scrollTop,
+        };
+    }
+
+    handleScroll(){
+       let windowsScrollTop  = window.pageYOffset
+       if(windowsScrollTop >= 153){
+         this.setState({
+          navbarTop: true
+         });
+       }else{
+         this.setState({
+          navbarTop: false
+         });}
+       }
+
+
+
+    /*componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }*/
+
+
   render(){
+
+
     return(
+
       <Container>
+      <Background />
       <Header>
-            <h1>Alexandre Robin</h1>
-            <p>HR Consultant & Web Developer</p>
-            <p>from France</p>
+            <Baseline>Alexandre Robin</Baseline>
+            <p>HR Consultant - Learning how to code</p>
+            <p><FontAwesome name="map-marker"  style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/> Paris, France</p>
       </Header>
 
-        <Nav>
-          <Navbar>
-            <MenuItem><a href="#">About Me</a></MenuItem>
-            <MenuItem><a href="#">Portfolio</a></MenuItem>
-            <MenuItem><a href="#">Contact</a></MenuItem>
+        {/*<Nav navbarTop={this.state.navbarTop}>
+          <Navbar  ref="navbar" id="navbar">
+            <MenuItem color={"#f44336"}><a href="#">About Me</a></MenuItem>
+            <MenuItem color={"#03A9F4"}><a href="#">Portfolio</a></MenuItem>
+            <MenuItem color={"#8BC34A"}><a href="#">Contact</a></MenuItem>
           </Navbar>
-
         </Nav>
-        <About>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</About>
 
+        <About></About>*/}
+
+        <SectionTitle>My Projects</SectionTitle>
         <Portfolio>
           {
             projects.map(function(a) {
-              if (a.href != ""){
+              if (a.href != "https://media.giphy.com/media/3oxRm9NLuGHvWCZcdO/giphy.gif" || ""){
               return (
                 <Project title={a.title}
                   href={a.href} />
               )
             } else {
               return (
-                <Project title={a.title + " - Work in Progress"}
+                <Project title={a.title + " - WIP"}
                   href={a.href} />
               )
             }
@@ -124,9 +190,18 @@ class Content extends Component{
           }
         <AchievementHidden/>
         </Portfolio>
-        <div className="Footer">
-          <p>Thanks</p>
-        </div>
+
+        <Footer>
+          {
+            socialNetworks.map(function(a) {
+              if (a.href != "" && a.icon != ""){
+              return (
+                  <Social href={a.href}><FontAwesome name={a.icon}/></Social>
+              )
+            }
+            })
+          }
+        </Footer>
       </Container>
     )
   }

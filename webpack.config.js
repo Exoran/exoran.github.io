@@ -4,7 +4,7 @@ var path = require('path');
 var BUILD_DIR = path.resolve(__dirname, 'public');
 var APP_DIR = path.resolve(__dirname, 'client/src/app');
 var ROOT_DIR = path.resolve(__dirname, '');
-
+var NODE_MODULE
 
 var config = {
   entry: {
@@ -39,7 +39,10 @@ var config = {
     loaders: [
       {
         test: /\.jsx?/,
-        include: APP_DIR,
+        include: [
+          APP_DIR,
+          //path.resolve(__dirname, "node_modules/react-particles-js")
+        ],
         loader: 'babel-loader'
       }, {
         test: /\.css$/,

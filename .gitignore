@@ -1,2 +1,4 @@
-node_modules
 vendor.json
+node_modules
+package.json
+particles.js-master

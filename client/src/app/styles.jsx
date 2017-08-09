@@ -7,16 +7,21 @@ export const Container = styled.div `
 
 /* Navigation panel     */
 export const Nav = styled.div `
-  position:relative;
+  transition: all 0.5s
+  position:${props => props.navbarTop === false ? 'relative' : 'fixed'}
+  top:${props => props.navbarTop === false ? 'null' : '0'}
+  background-color:#CFD8DC
+  z-index:500000000000;
   display: block;
-  width: 66%;
-  margin-left: 17%;
-  background-color: white;
+  width: ${props => props.navbarTop === false ? '66%' : '100%'}
+  margin-left:${props => props.navbarTop === false ? '17%' : '0'}
+  background-color: transparent
   margin-bottom: 0;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 `
 
 export const Navbar = styled.ul`
+  background-color:#CFD8DC;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -25,50 +30,84 @@ export const Navbar = styled.ul`
 
 export const MenuItem = styled.li`
   float: left;
+  color:black;
+
 
   >a{
     display: block;
-    color: black;
+    color: black
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 12px;
     text-decoration: none;
-}
+    border-bottom:3px;
+    border-bottom-style:solid
+    border-color:#CFD8DC
+  }
   >a:hover {
-    background-color: #111;
-    color:white;
-}
+    border-bottom:3px;
+    border-bottom-style:solid
+    border-color:${props => props.color}
+    color:${props => props.color};
+  }
 `
 
 
 export const Header = styled.div `
-width: 66%;
-margin-top: 2%;
-margin-left: 17%;
-min-height: auto;
-background-color: transparent;
-text-align: center;
-color: white;
+  width: 66%;
+  margin-top: 2%;
+  margin-left: 17%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: auto;
+  background-color: transparent;
+  text-align: center;
+  color: white;
 `
 
+export const Baseline = styled.h1`
+  display:inline;
+  background-color:null
+`
+
+
 export const About = styled.div `
+  padding:8px;
+  box-sizing: border-box
+  display:flex;
   width: 66%;
   margin-left: 17%;
   margin-top: 0%;
   background-color:#ECEFF1;
   margin-bottom: 5%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.16)
+`
+
+export const SectionTitle = styled.div`
+  text-align:center;
+  color:white;
+  font-weight: bold;
+  background-color:#263238;
+  width:66%;
+  margin-left:17%;
+  height:35px;
+  line-height: 35px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 `
 
 export const Portfolio = styled.div `
   width:66%;
   margin-left: 17%;
+  padding-top: 1%
   display: flex;
-  padding-top: 5%;
-  background: #CCCCCC;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.16), inset 0 1px 3px rgba(0,0,0,0.23);
+  background: #546E7A;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.16)
   flex-direction: horizontal;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 `
 
 export const Link = styled.a `
@@ -99,22 +138,23 @@ export const AchievementLink = styled(Link)`
   position: relative;
   display: block;
   width: 384px;
-  height: 260px;
+  height: 250px;
   margin-bottom: 16px;
   background: white;
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   overflow: hidden;
   & h1 {
     position: absolute;
     display: block;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 48px;
-    line-height: 48px;
-    color: #00695C;
-    font-size: 160%;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    height: 30px;
+    line-height: 30px;
+    color: #263238;
+    font-size: 130%;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -137,7 +177,7 @@ export const Preview = styled.embed`
   height: 1080;
   border: none;
   position: relative;
-  margin-top: 44px;
+  margin-top: 34px;
 `
 export const NoClick = styled.div`
   display: block;
@@ -147,4 +187,33 @@ export const NoClick = styled.div`
   right: 0;
   bottom: 0;
   background: rgba(0,0,0,0);
+`
+
+export const Footer = styled.div`
+  padding:50px;
+  text-align:center;
+  background-color:transparent;
+  height:50px;
+`
+
+export const Wrapper = styled.div`
+  top:0;
+  position:fixed;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  z-index: -1
+`
+
+
+
+export const Social = styled.a`
+  color:white;
+  font-size:35px;
+  line-height: 50px;
+  margin:8px;
+
+  &:hover{
+    color:#263238;
+  }
 `
