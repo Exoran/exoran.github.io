@@ -38,7 +38,7 @@ const projects=[
   {
     title:"Calculator",
     type:"FCC",
-    href:"http://alexandrerobin.fr/fcc/calculator/"
+    href:"/fcc/calculator/"
   },
   {
     title:"Pomodoro",
