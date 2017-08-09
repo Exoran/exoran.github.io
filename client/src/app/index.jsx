@@ -32,6 +32,21 @@ const WIP = "media/wip.gif"
 
 const projects=[
   {
+    title:"New Pomodoro",
+    type:"React",
+    href:WIP
+  },
+  {
+    title:"Markdown Editor",
+    type:"React",
+    href:"fcc/markdown/"
+  },
+  {
+    title:"FCC-Leaderboard",
+    type:"React + JQuery",
+    href:"fcc/leaderboard/"
+  },
+  {
     title:"Calculator",
     type:"JS + JQuery",
     href:"fcc/calculator/"
@@ -61,6 +76,7 @@ const projects=[
     type:"JS + JQuery",
     href:"fcc/tictactoe/"
   },
+
 ]
 
 const socialNetworks= [
@@ -99,8 +115,8 @@ class Project extends React.Component {
         <Title>{this.props.title}</Title>
 
         <Preview scrolling="no" src={href + this.props.href} />
-        <Ribbon>{this.props.type}</Ribbon>
         <NoClick />
+        <Ribbon>{this.props.type}</Ribbon>
       </AchievementLink>
     )
   }
@@ -183,10 +199,10 @@ class Content extends Component{
         <About>
 
           <p>
-            Welcome on my personal website & portfolio !</p>
+            Welcome to my personal website & portfolio !</p>
             <p>I am following the Freecodecamp courses and trying to complete all their challenges.
               I will publish all my projects on this portfolio and the sources will be available on my <a href="https://github.com/exoran/exoran.github.io/" target="_blank">Github</a>
-          </p>
+          .</p>
             <p>This portfolio is entirely created in ReactJS.
           </p>
         </About>
@@ -206,7 +222,7 @@ class Content extends Component{
             } else {
               return (
                 <Project title={a.title + " - WIP"}
-                  href={a.href} />
+                  href={a.href} type={a.type}/>
               )
             }
             })

@@ -2,13 +2,14 @@ var webpack = require('webpack');
 var path = require('path');
 
 var BUILD_DIR = path.resolve(__dirname, 'public');
-var APP_DIR = path.resolve(__dirname, 'client/src/app');
+var APP_DIR = path.resolve(__dirname, 'client/src/');
 var ROOT_DIR = path.resolve(__dirname, '');
-var NODE_MODULE
 
 var config = {
   entry: {
-    '/': APP_DIR + '/index.jsx',
+    '/': APP_DIR + '/app/index.jsx',
+    'fcc/leaderboard/':  APP_DIR + '/fcc/leaderboard/index.jsx',
+    'fcc/markdown/':  APP_DIR + '/fcc/markdown/index.jsx',
     //'fcc/calculator/':  APP_DIR + '/fcc/calculator/index.jsx',
     //'fcc/pomodoro/':    APP_DIR + '/fcc/pomodoro/index.jsx',
     //'fcc/quote/':       APP_DIR + '/fcc/quote/index.jsx',

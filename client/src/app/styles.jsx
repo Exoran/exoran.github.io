@@ -190,22 +190,25 @@ export const Preview = styled.embed`
 
 export const Ribbon = styled.div`
   width: 200px;
+  max-height: 30px;
   background: #006064;
   position: absolute;
   top: auto;
   bottom: 25px;
+  border:1px solid white;
   left: -50px;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   text-align: center;
-  line-height: 50px;
-  letter-spacing: 1px;
+  line-height: 30px;
+  letter-spacing: 0px;
   color: #f0f0f0;
+
 `
 export const NoClick = styled.div`
   display: block;
   position: absolute;
-  top: 44px;
+  top: 34px;
   left: 0;
   right: 0;
   bottom: 0;
