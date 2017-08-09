@@ -38,27 +38,27 @@ const projects=[
   {
     title:"Calculator",
     type:"FCC",
-    href:"/fcc/calculator/"
+    href:"fcc/calculator/"
   },
   {
     title:"Pomodoro",
     type:"FCC",
-    href:"https://media.giphy.com/media/3oxRm9NLuGHvWCZcdO/giphy.gif"
+    href:"media/wip.gif"
   },
   {
     title:"Weather",
     type:"FCC",
-    href:"https://media.giphy.com/media/3oxRm9NLuGHvWCZcdO/giphy.gif"
+    href:"media/wip.gif"
   },
   {
     title:"Twitch",
     type:"FCC",
-    href:"https://media.giphy.com/media/3oxRm9NLuGHvWCZcdO/giphy.gif"
+    href:"media/wip.gif"
   },
   {
     title:"Tictactoe",
     type:"FCC",
-    href:"https://media.giphy.com/media/3oxRm9NLuGHvWCZcdO/giphy.gif"
+    href:"media/wip.gif"
   },
 ]
 
@@ -87,15 +87,15 @@ const socialNetworks= [
 
 class Project extends React.Component {
   render() {
-    /*let href = window.location.href
+    let href = window.location.href
     href = href.split('/')
     href.pop()
     href.push('')
-    href = href.join('/')*/
+    href = href.join('/')
     return (
-      <AchievementLink href={this.props.href}>
+      <AchievementLink href={href + this.props.href}>
         <Title>{this.props.title}</Title>
-        <Preview scrolling="no" src={this.props.href} />
+        <Preview scrolling="no" src={href + this.props.href} />
         <NoClick />
       </AchievementLink>
     )
